@@ -7,9 +7,10 @@
 library(wordcloud)
 library(SnowballC)
 library(RColorBrewer)
+library(readr)
 
 
-stuff <- read_csv(comments)
+stuff <- read_file(data/raw/Carter_1981.txt)
 picture_width = 1280
 picture_height = 800
 
