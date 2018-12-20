@@ -1,5 +1,5 @@
 # vector of comments
-# the input file will have this, and the fucntion receives this solely as the input 
+# the input file will have this, and the function  receives this solely as the input 
 # after being cleaned
 
 # assume libraries on 
