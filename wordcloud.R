@@ -8,6 +8,7 @@ library(wordcloud)
 library(SnowballC)
 library(RColorBrewer)
 library(readr)
+library(tm)
 
 
 stuff <- read_file(data/raw/Carter_1981.txt)
