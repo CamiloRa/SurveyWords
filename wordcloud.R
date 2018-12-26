@@ -16,16 +16,23 @@ data_title <- "Carter_1981.txt"
 picture_width = 1280
 picture_height = 800
 mystopwords <- c("car")
-
+pal <- brewer.pal(8, "Accent")
+  
 
 stuff <- readr::read_file(paste(data_path,data_title,sep=""))
 
+
 picture_name <- paste(data_title, Sys.Date(), ".jpg", sep="") 
+
 ld_comments <- Corpus(VectorSource((stuff)))
+ld_comments <- tm_map(ld_comments, content_transformer(tolower))
 ld_comments <- tm_map(ld_comments, PlainTextDocument)
 ld_comments <- tm_map(ld_comments, removePunctuation)
 ld_comments <- tm_map(ld_comments, removeWords, mystopwords)
+ld_comments <- tm_map(ld_comments, removeWords, stripWhitespace)
+
 jpeg(filename=picture_name, picture_width, picture_height, units = "px")
+
 wordcloud(ld_comments,
           scale=c(15,.10),
           max.words = Inf,
