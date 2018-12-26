@@ -31,8 +31,8 @@ ld_comments <- tm_map(ld_comments, stripWhitespace)
 
 jpeg(filename=picture_name, picture_width, picture_height, units = "px")
   wordcloud(ld_comments,
-            scale=c(15,.10),
-            max.words = Inf,
+            scale=c(3.5,.10),
+            max.words = 500,
             random.order = FALSE,
             rot.per = 0,
             colors= pal)
