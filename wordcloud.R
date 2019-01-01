@@ -10,7 +10,7 @@ library(RColorBrewer)
 library(readr)
 library(tm)
 
-source:(PaintTheWords.R)
+source("PaintTheWords.R")
 # function that takes one parameter, and makes the JPEGs from the Corpus after it has been transformed
 
 #PaintTheWords <- function(picture_name, picture_width = 1200, picture_height = 800) {
