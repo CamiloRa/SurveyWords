@@ -10,11 +10,27 @@ library(RColorBrewer)
 library(readr)
 library(tm)
 
+#PaintTheWords
+# function that takes one parameter, and makes the JPEGs from the Corpus after it has been transformed
+
+PaintTheWords <- function(picture_name, picture_width = 1200, picture_height = 800) {
+  
+  jpeg(filename=picture_name, picture_width, picture_height, units = "px")
+  wordcloud(ld_comments,
+            scale=c(3.5,.10),
+            max.words = 500,
+            random.order = FALSE,
+            rot.per = 0,
+            colors= pal)
+  dev.off()
+}
+
+
 
 data_path <- "./data/raw/"
 data_title <- "Carter_1981.txt"
-picture_width = 1280
-picture_height = 800
+# picture_width = 1280
+# picture_height = 800
 mystopwords <- c(stopwords('english'), 'this', 'the', 'and', 'with', 'that', 'not', 'yes', 'yet')
 pal <- brewer.pal(8, "Accent")
   
@@ -29,11 +45,4 @@ ld_comments <- tm_map(ld_comments, removePunctuation)
 ld_comments <- tm_map(ld_comments, removeWords, mystopwords)
 ld_comments <- tm_map(ld_comments, stripWhitespace)
 
-jpeg(filename=picture_name, picture_width, picture_height, units = "px")
-  wordcloud(ld_comments,
-            scale=c(3.5,.10),
-            max.words = 500,
-            random.order = FALSE,
-            rot.per = 0,
-            colors= pal)
-dev.off()
+PaintTheWords(picture_name)
