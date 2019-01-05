@@ -31,3 +31,5 @@ ld_comments <- tm_map(ld_comments, removeWords, mystopwords)
 ld_comments <- tm_map(ld_comments, stripWhitespace)
 
 PaintTheWords(picture_name)
+
+comments_dtm <- DocumentTermMatrix(ld_comments)
