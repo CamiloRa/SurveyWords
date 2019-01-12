@@ -3,6 +3,8 @@
 
 PaintTheWords <- function(picture_name, picture_width = 1200, picture_height = 800) {
 
+# is the colors variable valid?
+  
   jpeg(filename=picture_name, picture_width, picture_height, units = "px")
   wordcloud(ld_comments,
             scale=c(3.5,.10),
