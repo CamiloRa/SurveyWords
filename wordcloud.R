@@ -13,6 +13,8 @@ library(tm)
 source("PaintTheWords.R")
 
 data_path <- "./data/raw/"
+listoffiles <- dir(data_path)
+
 data_title <- "Carter_1981.txt"
 # picture_width = 1280
 # picture_height = 800
