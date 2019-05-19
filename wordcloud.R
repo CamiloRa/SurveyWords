@@ -9,6 +9,7 @@ library(SnowballC)
 library(RColorBrewer)
 library(readr)
 library(tm)
+library(word2vec)
 
 source("PaintTheWords.R")
 
